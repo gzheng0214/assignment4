@@ -1,0 +1,79 @@
+<!doctype html>
+<head>
+    <title>Family Emergency - Assignment 4</title>
+</head>
+<style>
+  body {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  table, td, th {
+    border: 1px solid;
+    text-align: center;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+</style>
+<html>
+   <body>
+     <h1>Summary Report For {{ date }}</h1>
+     <table>
+      <thead>
+        <th>
+          Product Name
+        </th>
+        <th>
+          Product ID
+        </th>
+        <th>
+          Quantity Received
+        </th>
+        <th>
+          Quantity Shipped
+        </th>
+        <th>
+          Quantity Returned
+        </th>
+        <th>
+          Quantity on Hand
+        </th>
+        <th>
+          Last Updated
+        </th>
+      </thead>
+      <tbody>
+        {% for product in products %}
+        <tr>
+          <td>
+            {{ product['product_name']}}
+          </td>
+          <td>
+            {{ product['product_id']}}
+          </td>
+          <td>
+            {{ product['received']}}
+          </td>
+          <td>
+            {{ product['shipped']}}
+          </td>
+          <td>
+            {{ product['returned']}}
+          </td>
+          <td>
+            {{ product['total']}}
+          </td>
+          <td>
+            {{ product['last_updated']}}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+     </table>
+   </body>
+</html>

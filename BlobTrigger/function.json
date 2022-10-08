@@ -1,0 +1,30 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "myblob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "documents/{name}.json",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "documents",
+      "databaseName": "assignment4Database",
+      "collectionName": "assignment4Collection",
+      "connectionStringSetting": "AzureCosmosDBConnectionString",
+      "createIfNotExists": true
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "out",
+      "databaseName": "assignment4Database",
+      "collectionName": "assignment4Collection",
+      "createIfNotExists": true,
+      "connectionStringSetting": "AzureCosmosDBConnectionString"
+    }
+  ]
+}
